@@ -7,6 +7,12 @@
       Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate
     </title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+     <!-- animate.css -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -29,7 +35,7 @@
     <section class="relative py-20 lg:py-24 bg-gray-50">
       <div class="container mx-auto px-4">
         <!-- Tabs -->
-        <div class="tab__header mb-16 flex items-center justify-center gap-12 md:flex-nowrap xl:mb-21.5 xl:gap-50 rounded-lg border border-gray-200 bg-white shadow-md">
+        <div class="tab__header mb-16 flex items-center justify-center gap-12 md:flex-nowrap xl:mb-21.5 xl:gap-50 rounded-lg border border-gray-200 bg-white shadow-md wow animate__animated animate__fadeInDown animate__delay-1s">
           <a href="#" class="relative px-6 py-4 text-gray-700 font-medium text-lg md:px-8 md:py-5 active">
             <span class="tab__number mr-2 text-gray-500">01</span> Clean User Interface
             <span class="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></span>
@@ -43,7 +49,7 @@
         </div>
     
         <!-- Content -->
-        <div class="flex flex-col lg:flex-row items-center lg:gap-12">
+        <div class="flex flex-col lg:flex-row items-center lg:gap-12 wow animate__animated animate__fadeInDown animate__delay-2s">
           <!-- Left -->
           <div class="lg:w-1/2 mb-10 lg:mb-0">
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
@@ -84,5 +90,18 @@
 
     <!-- FOOTER -->
     <footer></footer>
+
+
+    
+    <!-- wow.js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+      integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      new WOW().init();
+    </script>
   </body>
 </html>
