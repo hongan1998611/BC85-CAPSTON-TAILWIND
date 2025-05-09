@@ -75,3 +75,54 @@
     display: none;
   }
 }
+/* section 11 */
+.testi__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testi__header p {
+  color: #64748b;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.testi__content {
+  display: flex;
+  justify-content: center;
+}
+
+.testi__content .swiper {
+  padding-bottom: 60px;
+  max-width: 1200px;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  max-width: 500px;
+  width: auto !important;
+  background: #fff;
+  padding: 30px 25px;
+  color: #64748b;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.bg-zumthor {
+  --tw-bg-opacity: 1;
+  background-color: rgb(237 245 255 / var(--tw-bg-opacity));
+}
+
+.swiper-pagination-bullet {
+  background: #cbd5e1;
+  opacity: 1;
+  margin: 0 4px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #3b82f6 !important;
+}
