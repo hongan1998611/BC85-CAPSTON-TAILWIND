@@ -81,6 +81,21 @@ nav li:hover svg {
   animation: animateTop 1.5s cubic-bezier(0.25, 0.1, 0.25, 1.5) forwards;
 }
 
+/* start section 2 */
+
+.brand.bg-alabaster {
+  background-color: rgb(251 251 251);
+}
+
+.brand.border-y-stroke {
+  border-top-color: rgb(238 238 238);
+  border-bottom-color: rgb(238 238 238);
+}
+
+.brand__content {
+  gap: 1.875rem;
+}
+
 /* start section-6 */
 .tab__number {
   display: inline-flex;
@@ -168,5 +183,19 @@ nav li:hover svg {
   }
   .img-right-section-6 {
     display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* section 2 */
+  brand__content {
+    gap: 3.125rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* section 2 */
+  brand__content {
+    gap: 7.25rem;
   }
 }
