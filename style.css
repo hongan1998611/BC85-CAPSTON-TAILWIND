@@ -102,10 +102,8 @@
 }
 
 .swiper-slide {
-  max-width: 500px;
-  width: auto !important;
+  max-width: 574px;
   background: #fff;
-  padding: 30px 25px;
   color: #64748b;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -125,4 +123,257 @@
 
 .swiper-pagination-bullet-active {
   background: #3b82f6 !important;
+}
+/* section 12 */
+.pricing-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  background: white;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-card h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card ul {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
+}
+
+.pricing-card ul li {
+  color: #111827;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.pricing-card ul li.disabled {
+  color: #9ca3af;
+  opacity: 0.6;
+}
+
+.pricing-card button {
+  color: #3b82f6;
+}
+
+.popular-badge {
+  position: absolute;
+  transform: rotate(-90deg);
+  background: #3b82f6;
+  color: white;
+  padding: 0.25rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/* section 13 */
+
+#support .form-container {
+  background: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.border-stroke {
+  --tw-border-opacity: 1;
+  border-color: rgb(238 238 238 / var(--tw-border-opacity));
+}
+#support input::placeholder,
+#support textarea::placeholder {
+  color: #9ca3af;
+}
+
+#support input:focus,
+#support textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+#support button:hover {
+  background-color: rgb(44 49 73 / 1);
+  cursor: pointer;
+}
+
+#support .info-container p {
+  color: #6b7280;
+}
+/* section 14 */
+#news-blog .blog-card {
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  background: white;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+
+#news-blog .blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
+}
+
+#news-blog .blog-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+#news-blog .blog-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.blog-card h3 a:hover {
+  color: #2563eb;
+}
+/* footer */
+/* === FOOTER STYLING === */
+footer {
+  background-color: white;
+  color: #1f2937;
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.footer__col {
+  flex: 1 1 220px;
+}
+
+.footer__col h4 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer__col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer__col ul li a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__col ul li a:hover {
+  color: #3b82f6;
+}
+
+.footer__desc {
+  color: #6b7280;
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.footer__contact {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.footer__email {
+  font-size: 26px;
+  color: #1f2937;
+}
+
+.footer__subscribe {
+  margin-top: 1rem;
+}
+
+.footer__subscribe p {
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.footer__subscribe-box {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  max-width: 300px;
+}
+
+.footer__subscribe-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0.5rem;
+  flex-grow: 1;
+  color: #1f2937;
+}
+
+.footer__subscribe-box button {
+  background: none;
+  border: none;
+  color: #1f2937;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer__subscribe-box button:hover {
+  color: #3b82f6;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: #6b7280;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+@keyframes fadeInDownCustom {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down-custom {
+  animation: fadeInDownCustom 1.8s ease-out forwards;
 }
