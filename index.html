@@ -6,7 +6,15 @@
     <title>
       Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate
     </title>
+
+    <!-- tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- icon bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
 
     <!-- animate.css -->
     <link
@@ -21,39 +29,81 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- headroom scroll header -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.12.0/headroom.min.js"
+      integrity="sha512-9UsrKTYzS9smDm2E58MLs0ACtOki+UC4bBq4iK5wi7lJycwqcaiHxr1bdEsIVoK0l5STEzLUdYyDdFQ5OEjczw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
-    <!-- HEADER -->
-    <header class="fixed left-0 top-0 z-999 w-full py-7 bg-white">
+    <!-- HEADER Hồng ân -->
+    <header id="header" class="fixed left-0 top-0 z-999 w-full py-7 bg-white">
       <div
         class="relative mx-auto max-w-[1390px] items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0"
       >
-        <div class="xl:w-1/4">
+        <div class="flex justify-between items-center w-full xl:w-1/4">
           <a href="#">
             <img src="./images/logo/logo-light.svg" alt="logo" />
           </a>
+
+          <button
+            onclick="toggleNavbarCustomClass()"
+            class="menu__button block xl:hidden"
+          >
+            <span
+              class="relative block h-[1.375rem] w-[1.375rem] cursor-pointer"
+              ><span
+                class="absolute right-0 h-full w-full text-3xl text-black visible menu__open"
+                ><i class="bi bi-list"></i></span
+              ><span
+                class="absolute right-0 h-full w-full text-2xl text-black invisible menu__close"
+                ><i class="bi bi-x-lg"></i></span
+            ></span>
+          </button>
         </div>
 
-        <div class="flex h-0 w-full justify-between items-center xl:h-auto">
+        <div
+          class="navbar flex h-0 w-full justify-between items-center invisible xl:visible xl:h-auto"
+        >
           <nav>
-            <ul class="flex gap-5 xl:flex-row xl:gap-10">
-              <li><a href="">Home</a></li>
-              <li><a href="">Features</a></li>
-              <li><a href="">Blog</a></li>
-              <li><a href="">Docs</a></li>
+            <ul
+              class="w-full flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10"
+            >
+              <li class="active"><a href="">Home</a></li>
+              <li><a href="#feature">Features</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Docs</a></li>
               <li
                 class="flex justify-between items-center gap-3 page__hover relative"
               >
-                <a href="">Pages </a>
-                <span>
-                  <svg class="h-3 w-3 cursor-pointer" viewBox="0 0 512 512">
-                    <path
-                      d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
-                    ></path>
-                  </svg>
-                </span>
+                <button
+                  onclick="changeDisplayFlex('.dropdown')"
+                  class="flex items-center justify-between gap-3 cursor-pointer"
+                >
+                  Pages
+                  <span>
+                    <svg class="h-3 w-3 cursor-pointer" viewBox="0 0 512 512">
+                      <path
+                        d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
 
                 <ul class="dropdown flex">
                   <li>
@@ -72,23 +122,36 @@
                   <li><a href="#">404</a></li>
                 </ul>
               </li>
-              <li><a href="">Support</a></li>
+              <li><a href="#">Support</a></li>
             </ul>
           </nav>
 
-          <div class="flex justify-between items-center gap-6">
-            <svg width="20" height="20" viewBox="0 0 18 18" fill="currentColor">
-              <path
-                d="M16.9347 15.3963L12.4816 11.7799C14.3168 9.26991 14.1279 5.68042 11.8338 3.41337C10.6194 2.19889 9.00003 1.52417 7.27276 1.52417C5.54549 1.52417 3.92617 2.19889 2.71168 3.41337C0.201738 5.92332 0.201738 10.0256 2.71168 12.5355C3.92617 13.75 5.54549 14.4247 7.27276 14.4247C8.91907 14.4247 10.4574 13.804 11.6719 12.6975L16.179 16.3409C16.287 16.4219 16.4219 16.4759 16.5569 16.4759C16.7458 16.4759 16.9077 16.3949 17.0157 16.26C17.2316 15.9901 17.2046 15.6122 16.9347 15.3963ZM7.27276 13.2102C5.86935 13.2102 4.5739 12.6705 3.57532 11.6719C1.52418 9.62076 1.52418 6.30116 3.57532 4.27701C4.5739 3.27843 5.86935 2.73866 7.27276 2.73866C8.67617 2.73866 9.97162 3.27843 10.9702 4.27701C13.0213 6.32815 13.0213 9.64775 10.9702 11.6719C9.99861 12.6705 8.67617 13.2102 7.27276 13.2102Z"
+          <div class="flex items-center gap-6 ml-auto mt-7 xl:mt-0">
+            <a href="" class="text-[#757693]">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 18 18"
                 fill="currentColor"
-              ></path>
-            </svg>
+              >
+                <path
+                  d="M16.9347 15.3963L12.4816 11.7799C14.3168 9.26991 14.1279 5.68042 11.8338 3.41337C10.6194 2.19889 9.00003 1.52417 7.27276 1.52417C5.54549 1.52417 3.92617 2.19889 2.71168 3.41337C0.201738 5.92332 0.201738 10.0256 2.71168 12.5355C3.92617 13.75 5.54549 14.4247 7.27276 14.4247C8.91907 14.4247 10.4574 13.804 11.6719 12.6975L16.179 16.3409C16.287 16.4219 16.4219 16.4759 16.5569 16.4759C16.7458 16.4759 16.9077 16.3949 17.0157 16.26C17.2316 15.9901 17.2046 15.6122 16.9347 15.3963ZM7.27276 13.2102C5.86935 13.2102 4.5739 12.6705 3.57532 11.6719C1.52418 9.62076 1.52418 6.30116 3.57532 4.27701C4.5739 3.27843 5.86935 2.73866 7.27276 2.73866C8.67617 2.73866 9.97162 3.27843 10.9702 4.27701C13.0213 6.32815 13.0213 9.64775 10.9702 11.6719C9.99861 12.6705 8.67617 13.2102 7.27276 13.2102Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </a>
 
-            <a href="#"><img src="./images/icon/icon-moon.svg" alt="logo" /></a>
-            <a href="#">Sign In</a>
+            <a href="#" class="mr-[0.375rem]"
+              ><img src="./images/icon/icon-moon.svg" alt="logo"
+            /></a>
+            <a
+              class="text-base leading-[1.625rem] font-medium text-[#757693] hover:text-[var(--text-hover)]"
+              href="#"
+              >Sign In</a
+            >
             <a
               href="#"
-              class="flex items-center justify-center rounded-full px-7.5 py-2.5 text-regular text-white bg-primary duration-300 ease-in-out hover:bg-primaryho"
+              class="flex items-center justify-center rounded-full px-7.5 py-2.5 text-base lead-[1.625rem] text-white bg-primary"
               >Sign Up</a
             >
           </div>
@@ -260,7 +323,7 @@
     </section>
 
     <!-- SECTION 3 -->
-    <section class="py-20 lg:py-[6.25rem] xl:py-[7.5rem]">
+    <section id="feature" class="py-20 lg:py-[6.25rem] xl:py-[7.5rem]">
       <div class="mx-auto max-w-[1315px] px-4 md:px-8 xl:px-0">
         <div
           class="wow animate_top animate__duration-2s relative mx-auto text-center"
@@ -271,7 +334,7 @@
             >
           </div>
           <h2
-            class="mx-auto mb-4 text-3xl font-bold text-black md:w-4/5 xl:w-1/2 xl:text-[2.75rem], xl:lead-[3.4375rem]"
+            class="mx-auto mb-4 text-3xl font-bold text-black md:w-4/5 xl:w-1/2 xl:text-[2.75rem] xl:lead-[3.4375rem]"
           >
             Core Features of Solid
           </h2>
@@ -574,6 +637,7 @@
         </div>
       </div>
     </section>
+
     <!-- SECTION 6 -->
     <section class="relative py-20 lg:py-24 bg-gray-50">
       <div class="container mx-auto px-4">
@@ -1028,6 +1092,7 @@
     <script>
       new WOW().init();
     </script>
+
     <!-- onclick + , - -->
     <script>
       function toggleAccordion(button) {
@@ -1047,6 +1112,78 @@
           icon.textContent = "+";
         }
       }
+
+      function toggleNavbarCustomClass() {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("navbar__custom");
+
+        const openMenu = document.querySelector(".menu__open");
+        const closeMenu = document.querySelector(".menu__close");
+
+        if (openMenu.style.visibility === "hidden") {
+          // Nếu menu đang đóng, mở nó ra
+          openMenu.style.visibility = "visible";
+          closeMenu.style.visibility = "hidden";
+        } else {
+          // Nếu menu đang mở, đóng nó lại
+          openMenu.style.visibility = "hidden";
+          closeMenu.style.visibility = "visible";
+        }
+      }
+
+      function changeDisplayFlex(className) {
+        const dropdown = document.querySelector(className);
+        if (dropdown) {
+          if (
+            dropdown.style.display === "none" ||
+            dropdown.style.display === ""
+          ) {
+            dropdown.style.display = "flex";
+          } else {
+            dropdown.style.display = "none";
+          }
+        }
+      }
+
+      window.addEventListener("resize", function () {
+        const navbar = document.querySelector(".navbar");
+        const openMenu = document.querySelector(".menu__open");
+        const closeMenu = document.querySelector(".menu__close");
+        if (window.innerWidth >= 1280) {
+          navbar.classList.remove("navbar__custom");
+          openMenu.style.visibility = "visible";
+          closeMenu.style.visibility = "hidden";
+        }
+      });
+    </script>
+
+    <!-- scroll header -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var myElement = document.querySelector("#header");
+        var headroom = new Headroom(myElement, {
+          offset: myElement.offsetHeight,
+          tolerance: 0,
+          classes: {
+            initial: "py-7 bg-white transition duration-100",
+            pinned: "pinned",
+            unpinned: "unpinned",
+            top: "top",
+            notTop: "not-top",
+            bottom: "bottom",
+            notBottom: "not-bottom",
+          },
+          onNotTop: function () {
+            this.elem.classList.remove("py-7");
+            this.elem.classList.add("!py-4", "shadow");
+          },
+          onTop: function () {
+            this.elem.classList.add("py-7");
+            this.elem.classList.remove("!py-4", "shadow");
+          },
+        });
+        headroom.init();
+      });
     </script>
   </body>
 </html>
