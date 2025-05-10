@@ -96,6 +96,26 @@ nav li:hover svg {
   gap: 1.875rem;
 }
 
+.animate__delay--2 {
+  animation-delay: 0.05s;
+}
+
+.animate__delay--3 {
+  animation-delay: 0.07s;
+}
+
+.animate__delay--4 {
+  animation-delay: 0.09s;
+}
+
+.animate__delay--5 {
+  animation-delay: 0.12s;
+}
+
+.animate__delay--6 {
+  animation-delay: 0.15s;
+}
+
 /* start section-6 */
 .tab__number {
   display: inline-flex;
