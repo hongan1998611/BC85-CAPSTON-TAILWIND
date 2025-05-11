@@ -6,7 +6,15 @@
     <title>
       Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate
     </title>
+
+    <!-- tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- icon bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
 
     <!-- animate.css -->
     <link
@@ -21,25 +29,569 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <!-- Swiper -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- headroom scroll header -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.12.0/headroom.min.js"
+      integrity="sha512-9UsrKTYzS9smDm2E58MLs0ACtOki+UC4bBq4iK5wi7lJycwqcaiHxr1bdEsIVoK0l5STEzLUdYyDdFQ5OEjczw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
-    <!-- HEADER -->
-    <header></header>
+    <!-- HEADER Hồng ân -->
+    <header id="header" class="fixed left-0 top-0 z-999 w-full py-7 bg-white">
+      <div
+        class="relative mx-auto max-w-[1390px] items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0"
+      >
+        <div class="flex justify-between items-center w-full xl:w-1/4">
+          <a href="#">
+            <img src="./images/logo/logo-light.svg" alt="logo" />
+          </a>
+
+          <button
+            onclick="toggleNavbarCustomClass()"
+            class="menu__button block xl:hidden"
+          >
+            <span
+              class="relative block h-[1.375rem] w-[1.375rem] cursor-pointer"
+              ><span
+                class="absolute right-0 h-full w-full text-3xl text-black visible menu__open"
+                ><i class="bi bi-list"></i></span
+              ><span
+                class="absolute right-0 h-full w-full text-2xl text-black invisible menu__close"
+                ><i class="bi bi-x-lg"></i></span
+            ></span>
+          </button>
+        </div>
+
+        <div
+          class="navbar flex h-0 w-full justify-between items-center invisible xl:visible xl:h-auto"
+        >
+          <nav>
+            <ul
+              class="w-full flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10"
+            >
+              <li class="active"><a href="">Home</a></li>
+              <li><a href="#feature">Features</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Docs</a></li>
+              <li
+                class="flex justify-between items-center gap-3 page__hover relative"
+              >
+                <button
+                  onclick="changeDisplayFlex('.dropdown')"
+                  class="flex items-center justify-between gap-3 cursor-pointer"
+                >
+                  Pages
+                  <span>
+                    <svg class="h-3 w-3 cursor-pointer" viewBox="0 0 512 512">
+                      <path
+                        d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+
+                <ul class="dropdown flex">
+                  <li>
+                    <a href="#">Blog Grid</a>
+                  </li>
+                  <li>
+                    <a href="#">Sign In</a>
+                  </li>
+                  <li>
+                    <a href="#">Sign Up</a>
+                  </li>
+                  <li><a href="#">Docs</a></li>
+                  <li>
+                    <a href="#">Support</a>
+                  </li>
+                  <li><a href="#">404</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </nav>
+
+          <div class="flex items-center gap-6 ml-auto mt-7 xl:mt-0">
+            <a href="" class="text-[#757693]">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 18 18"
+                fill="currentColor"
+              >
+                <path
+                  d="M16.9347 15.3963L12.4816 11.7799C14.3168 9.26991 14.1279 5.68042 11.8338 3.41337C10.6194 2.19889 9.00003 1.52417 7.27276 1.52417C5.54549 1.52417 3.92617 2.19889 2.71168 3.41337C0.201738 5.92332 0.201738 10.0256 2.71168 12.5355C3.92617 13.75 5.54549 14.4247 7.27276 14.4247C8.91907 14.4247 10.4574 13.804 11.6719 12.6975L16.179 16.3409C16.287 16.4219 16.4219 16.4759 16.5569 16.4759C16.7458 16.4759 16.9077 16.3949 17.0157 16.26C17.2316 15.9901 17.2046 15.6122 16.9347 15.3963ZM7.27276 13.2102C5.86935 13.2102 4.5739 12.6705 3.57532 11.6719C1.52418 9.62076 1.52418 6.30116 3.57532 4.27701C4.5739 3.27843 5.86935 2.73866 7.27276 2.73866C8.67617 2.73866 9.97162 3.27843 10.9702 4.27701C13.0213 6.32815 13.0213 9.64775 10.9702 11.6719C9.99861 12.6705 8.67617 13.2102 7.27276 13.2102Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </a>
+
+            <a href="#" class="mr-[0.375rem]"
+              ><img src="./images/icon/icon-moon.svg" alt="logo"
+            /></a>
+            <a
+              class="text-base leading-[1.625rem] font-medium text-[#757693] hover:text-[var(--text-hover)]"
+              href="#"
+              >Sign In</a
+            >
+            <a
+              href="#"
+              class="flex items-center justify-center rounded-full px-7.5 py-2.5 text-base lead-[1.625rem] text-white bg-primary"
+              >Sign Up</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
 
     <!-- SECTION 1 -->
+    <section class="overflow-hidden pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46">
+      <div class="mx-auto max-w-[1390px] px-4 md:px-8 2xl:px-0">
+        <div class="flex lg:items-center lg:gap-8 xl:gap-32.5">
+          <div class="md:w-1/2">
+            <h4 class="mb-4.5 text-lg font-medium text-black">
+              🔥 Solid - A Complete SaaS Starter Template for SaaS
+            </h4>
+            <h1
+              class="mb-5 pr-16 text-3xl font-bold text-black xl:text-[2.75rem] xl:lead-[3.625rem]"
+            >
+              Robust SaaS Boilerplate and Starter for<span
+                class="relative ml-2.5 inline-block title__before"
+                >Next.js</span
+              >
+            </h1>
+            <p>
+              Packed with all the key integrations you need for swift SaaS
+              startup launch, including - Authentication, Database, Sanity Blog,
+              Essential UI Components, Business Pages and More. Built-winth -
+              Next.js, React 18 and TypeScript.
+            </p>
+            <div class="mt-10">
+              <a
+                aria-label="get started button"
+                class="inline-block rounded-full bg-black px-7.5 py-2.5 text-white duration-300 ease-in-out"
+                href="#"
+                >Get Started</a
+              >
+            </div>
+          </div>
+          <div class="hidden md:w-1/2 lg:block">
+            <div class="relative">
+              <img
+                alt="shape"
+                loading="lazy"
+                width="46"
+                height="246"
+                decoding="async"
+                class="absolute -left-11.5 top-0"
+                src="images/shape/shape-01.png"
+                style="color: transparent"
+              />
+
+              <img
+                alt="shape"
+                loading="lazy"
+                width="36.9"
+                height="36.7"
+                decoding="async"
+                class="absolute bottom-0 right-0 z-10"
+                src="/images/shape/shape-02.svg"
+                style="color: transparent"
+              />
+
+              <img
+                alt="shape"
+                loading="lazy"
+                width="21.64"
+                height="21.66"
+                decoding="async"
+                class="absolute -right-6.5 bottom-0 z-10"
+                src="/images/shape/shape-03.svg"
+                style="color: transparent"
+              />
+
+              <div class="relative aspect-[700/444] w-full">
+                <img
+                  alt="Hero"
+                  loading="lazy"
+                  decoding="async"
+                  class="shadow-solid-l"
+                  src="/images/hero/hero-light.svg"
+                />
+                <img
+                  alt="Hero"
+                  loading="lazy"
+                  decoding="async"
+                  class="hidden shadow-solid-l"
+                  src="/images/hero/hero-dark.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- SECTION 2 -->
+    <section class="brand border border-x-0 py-11 border-y-stroke bg-alabaster">
+      <div class="mx-auto max-w-[1390px] px-4 md:px-8 2xl:px-0">
+        <div
+          class="grid grid-cols-3 items-center justify-center md:grid-cols-6 brand__content"
+        >
+          <a
+            href="#"
+            class="wow animate_top animate__duration-2s max-w-full relative block h-10 w-[98px]"
+            ><img
+              alt="Client"
+              loading="lazy"
+              decoding="async"
+              class="opacity-65 transition-all duration-300 hover:opacity-100"
+              src="/images/brand/brand-light-01.svg"
+          /></a>
+
+          <a
+            href="#"
+            class="wow animate_top animate__duration-2s animate__delay--2 max-w-full relative block h-10 w-[98px]"
+            ><img
+              alt="Client"
+              loading="lazy"
+              decoding="async"
+              class="opacity-65 transition-all duration-300 hover:opacity-100"
+              src="/images/brand/brand-light-02.svg"
+          /></a>
+
+          <a
+            href="#"
+            class="wow animate_top animate__duration-2s animate__delay--3 max-w-full relative block h-10 w-[98px]"
+            ><img
+              alt="Client"
+              loading="lazy"
+              decoding="async"
+              class="opacity-65 transition-all duration-300 hover:opacity-100"
+              src="/images/brand/brand-light-03.svg"
+          /></a>
+
+          <a
+            href="#"
+            class="wow animate_top animate__duration-2s animate__delay--4 max-w-full relative block h-10 w-[98px]"
+            ><img
+              alt="Client"
+              loading="lazy"
+              decoding="async"
+              class="opacity-65 transition-all duration-300 hover:opacity-100"
+              src="/images/brand/brand-light-04.svg"
+          /></a>
+
+          <a
+            href="#"
+            class="wow animate_top animate__duration-2s animate__delay--5 max-w-full relative block h-10 w-[98px]"
+            ><img
+              alt="Client"
+              loading="lazy"
+              decoding="async"
+              class="opacity-65 transition-all duration-300 hover:opacity-100"
+              src="/images/brand/brand-light-05.svg"
+          /></a>
+
+          <a
+            href="#"
+            class="wow animate_top animate__duration-2s animate__delay--6 max-w-full relative block h-10 w-[98px]"
+            ><img
+              alt="Client"
+              loading="lazy"
+              decoding="async"
+              class="opacity-65 transition-all duration-300 hover:opacity-100"
+              src="/images/brand/brand-light-06.svg"
+          /></a>
+        </div>
+      </div>
+    </section>
 
     <!-- SECTION 3 -->
+    <section id="feature" class="py-20 lg:py-[6.25rem] xl:py-[7.5rem]">
+      <div class="mx-auto max-w-[1315px] px-4 md:px-8 xl:px-0">
+        <div
+          class="wow animate_top animate__duration-2s relative mx-auto text-center"
+        >
+          <div class="mb-4 inline-block rounded-full feature__subheader">
+            <span class="text-sectiontitle font-medium text-black"
+              >SOLID FEATURES</span
+            >
+          </div>
+          <h2
+            class="mx-auto mb-4 text-3xl font-bold text-black md:w-4/5 xl:w-1/2 xl:text-[2.75rem] xl:lead-[3.4375rem]"
+          >
+            Core Features of Solid
+          </h2>
+          <p class="mx-auto md:w-4/5 lg:w-3/5 xl:w-[46%]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
+            ante in maximus.
+          </p>
+        </div>
+
+        <div
+          class="mt-[3.125rem] gap-[1.875rem] grid grid-cols-1 md:grid-cols-2 lg:mt-[3.75rem] lg:grid-cols-3 xl:mt-20 xl:gap-[3.125rem]"
+        >
+          <div
+            class="wow animate_top feature__card z-40 rounded-lg border border-white bg-white transition-all"
+            style="--animate-top-distance: -5px"
+          >
+            <div
+              class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-primary"
+            >
+              <img
+                alt="title"
+                loading="lazy"
+                width="36"
+                height="36"
+                decoding="async"
+                src="/images/icon/icon-01.svg"
+                style="color: transparent"
+              />
+            </div>
+            <h3
+              class="mb-5 text-xl font-semibold text-black mt-[1.875rem] xl:text-[1.625rem] xl:leading-8"
+            >
+              Crafted for SaaS
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+              convallis tortor.
+            </p>
+          </div>
+
+          <div
+            class="wow animate_top feature__card z-40 rounded-lg border border-white bg-white transition-all"
+            style="--animate-top-distance: -5px"
+          >
+            <div
+              class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-primary"
+            >
+              <img
+                alt="title"
+                loading="lazy"
+                width="36"
+                height="36"
+                decoding="async"
+                src="/images/icon/icon-02.svg"
+                style="color: transparent"
+              />
+            </div>
+            <h3
+              class="mb-5 text-xl font-semibold text-black mt-[1.875rem] xl:text-[1.625rem] xl:leading-8"
+            >
+              High-quality Design
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+              convallis tortor.
+            </p>
+          </div>
+
+          <div
+            class="wow animate_top feature__card z-40 rounded-lg border border-white bg-white transition-all"
+            style="--animate-top-distance: -5px"
+          >
+            <div
+              class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-primary"
+            >
+              <img
+                alt="title"
+                loading="lazy"
+                width="36"
+                height="36"
+                decoding="async"
+                src="/images/icon/icon-03.svg"
+                style="color: transparent"
+              />
+            </div>
+            <h3
+              class="mb-5 text-xl font-semibold text-black mt-[1.875rem] xl:text-[1.625rem] xl:leading-8"
+            >
+              Next.js + TypeScript
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+              convallis tortor.
+            </p>
+          </div>
+
+          <div
+            class="wow animate_top feature__card z-40 rounded-lg border border-white bg-white transition-all"
+            style="--animate-top-distance: -5px"
+          >
+            <div
+              class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-primary"
+            >
+              <img
+                alt="title"
+                loading="lazy"
+                width="36"
+                height="36"
+                decoding="async"
+                src="/images/icon/icon-04.svg"
+                style="color: transparent"
+              />
+            </div>
+            <h3
+              class="mb-5 text-xl font-semibold text-black mt-[1.875rem] xl:text-[1.625rem] xl:leading-8"
+            >
+              Sanity Blog and Docs
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+              convallis tortor.
+            </p>
+          </div>
+
+          <div
+            class="wow animate_top feature__card z-40 rounded-lg border border-white bg-white transition-all"
+            style="--animate-top-distance: -5px"
+          >
+            <div
+              class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-primary"
+            >
+              <img
+                alt="title"
+                loading="lazy"
+                width="36"
+                height="36"
+                decoding="async"
+                src="/images/icon/icon-05.svg"
+                style="color: transparent"
+              />
+            </div>
+            <h3
+              class="mb-5 text-xl font-semibold text-black mt-[1.875rem] xl:text-[1.625rem] xl:leading-8"
+            >
+              DB, Auth and Stripe
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+              convallis tortor.
+            </p>
+          </div>
+
+          <div
+            class="wow animate_top feature__card z-40 rounded-lg border border-white bg-white transition-all"
+            style="--animate-top-distance: -5px"
+          >
+            <div
+              class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-primary"
+            >
+              <img
+                alt="title"
+                loading="lazy"
+                width="36"
+                height="36"
+                decoding="async"
+                src="/images/icon/icon-06.svg"
+                style="color: transparent"
+              />
+            </div>
+            <h3
+              class="mb-5 text-xl font-semibold text-black mt-[1.875rem] xl:text-[1.625rem] xl:leading-8"
+            >
+              Regular Free Updates
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+              convallis tortor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- SECTION 4 -->
+    <section class="pb-20 lg:pb[6.25ren] xl:pb-[7.5rem] overflow-hidden">
+      <div class="mx-auto max-w-[1235px] px-4 md:px-8 xl:px-0">
+        <div class="flex items-center gap-8 lg:gap-[8.125rem]">
+          <div
+            class="wow animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
+          >
+            <img
+              alt="About"
+              loading="lazy"
+              decoding="async"
+              sizes="100vw"
+              src="./images//about/about-light-01.png"
+            />
+          </div>
+
+          <div class="wow animate_right md:w-1/2">
+            <h4 class="font-medium uppercase text-black">
+              <span
+                class="mb-4 mr-4 inline-flex rounded-full px-[1.125rem] py-1 uppercase text-white sass__span"
+                >New</span
+              >
+              SaaS Boilerplate for Next.js
+            </h4>
+            <h2
+              class="relative mb-6 text-3xl font-bold text-black xl:text-[2.75rem] xl:leading-[3.625rem]"
+            >
+              A Complete Solution for<span
+                class="relative inline-block title__before"
+                >SaaS Startup</span
+              >
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              ultricies lacus non fermentum ultrices. Fusce consectetur le.
+            </p>
+            <div class="mt-[1.875rem] flex items-center gap-5">
+              <div
+                class="flex h-[3.75rem] w-[3.75rem] items-center justify-center rounded-[50%] border border-[#eeeeee]"
+              >
+                <p class="text-xl leading-8 font-semibold text-black">01</p>
+              </div>
+              <div class="w-3/4">
+                <h3 class="mb-0.5 text-xl leading-8 text-black">
+                  Mailchimp for Newsletter Emails + SMTP for Transactional
+                  Emails
+                </h3>
+                <p>Ut ultricies lacus non fermentum ultrices.</p>
+              </div>
+            </div>
+            <div class="mt-7.5 flex items-center gap-5">
+              <div
+                class="flex h-[3.75rem] w-[3.75rem] items-center justify-center rounded-[50%] border border-[#eeeeee]"
+              >
+                <p class="text-xl leading-8 font-semibold text-black">02</p>
+              </div>
+              <div class="w-3/4">
+                <h3 class="mb-0.5 text-xl leading-8 text-black">
+                  Algolia Integration for Site Search
+                </h3>
+                <p>consectetur adipiscing elit fermentum ultricies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- SECTION 5 LONG ANH -->
     <section class="overflow-hidden pb-10 lg:pb-10 px-4">
@@ -91,6 +643,7 @@
         </div>
       </div>
     </section>
+
     <!-- SECTION 6 -->
     <section class="relative py-20 lg:py-24 bg-gray-50">
       <div class="container mx-auto px-4">
@@ -1603,6 +2156,7 @@
     <script>
       new WOW().init();
     </script>
+
     <!-- onclick + , - -->
     <script>
       function toggleAccordion(button) {
@@ -1622,6 +2176,78 @@
           icon.textContent = "+";
         }
       }
+
+      function toggleNavbarCustomClass() {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("navbar__custom");
+
+        const openMenu = document.querySelector(".menu__open");
+        const closeMenu = document.querySelector(".menu__close");
+
+        if (openMenu.style.visibility === "hidden") {
+          // Nếu menu đang đóng, mở nó ra
+          openMenu.style.visibility = "visible";
+          closeMenu.style.visibility = "hidden";
+        } else {
+          // Nếu menu đang mở, đóng nó lại
+          openMenu.style.visibility = "hidden";
+          closeMenu.style.visibility = "visible";
+        }
+      }
+
+      function changeDisplayFlex(className) {
+        const dropdown = document.querySelector(className);
+        if (dropdown) {
+          if (
+            dropdown.style.display === "none" ||
+            dropdown.style.display === ""
+          ) {
+            dropdown.style.display = "flex";
+          } else {
+            dropdown.style.display = "none";
+          }
+        }
+      }
+
+      window.addEventListener("resize", function () {
+        const navbar = document.querySelector(".navbar");
+        const openMenu = document.querySelector(".menu__open");
+        const closeMenu = document.querySelector(".menu__close");
+        if (window.innerWidth >= 1280) {
+          navbar.classList.remove("navbar__custom");
+          openMenu.style.visibility = "visible";
+          closeMenu.style.visibility = "hidden";
+        }
+      });
+    </script>
+
+    <!-- scroll header -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var myElement = document.querySelector("#header");
+        var headroom = new Headroom(myElement, {
+          offset: myElement.offsetHeight,
+          tolerance: 0,
+          classes: {
+            initial: "py-7 bg-white transition duration-100",
+            pinned: "pinned",
+            unpinned: "unpinned",
+            top: "top",
+            notTop: "not-top",
+            bottom: "bottom",
+            notBottom: "not-bottom",
+          },
+          onNotTop: function () {
+            this.elem.classList.remove("py-7");
+            this.elem.classList.add("!py-4", "shadow");
+          },
+          onTop: function () {
+            this.elem.classList.add("py-7");
+            this.elem.classList.remove("!py-4", "shadow");
+          },
+        });
+        headroom.init();
+      });
     </script>
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
