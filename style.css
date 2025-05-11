@@ -4,6 +4,8 @@
   --tw-border-opacity: 1;
   --tw-bg-opacity: 1;
   --tw-shadow: 0px 2px 19px rgba(0, 0, 0, 0.05);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
   --tw-shadow-colored: 0px 2px 19px var(--tw-shadow-color);
   --tw-rotate: 45deg;
 }
@@ -11,7 +13,6 @@
 html {
   font-family: "Inter", sans-serif;
   font-style: normal;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -74,6 +75,14 @@ nav li:hover {
   animation-duration: 2s;
   animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.5);
   animation-fill-mode: forwards;
+}
+
+/* section 1 */
+.shadow-solid-l {
+  --tw-shadow: 0px 10px 120px 0px rgba(45, 74, 170, 0.1);
+  --tw-shadow-colored: 0px 10px 120px 0px;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 /* start section 2 */
@@ -560,6 +569,12 @@ footer {
   border-top: 1px solid #e5e7eb;
 }
 
+/* back to top */
+.cd-top--is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
 @keyframes fadeInDownCustom {
   from {
     opacity: 0;
@@ -573,7 +588,7 @@ footer {
 
 .fade-in-down-custom {
   animation: fadeInDownCustom 1.8s ease-out forwards;
-
+}
 
 @media (min-width: 1024px) {
   /* section 2 */
