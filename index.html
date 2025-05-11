@@ -6,6 +6,11 @@
     <title>
       Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate
     </title>
+    <link
+      rel="shortcut icon"
+      href="./images/favicon/favicon.png"
+      type="image/x-icon"
+    />
 
     <!-- tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -238,13 +243,6 @@
                   decoding="async"
                   class="shadow-solid-l"
                   src="/images/hero/hero-light.svg"
-                />
-                <img
-                  alt="Hero"
-                  loading="lazy"
-                  decoding="async"
-                  class="hidden shadow-solid-l"
-                  src="/images/hero/hero-dark.svg"
                 />
               </div>
             </div>
@@ -2146,6 +2144,26 @@
       </div>
     </footer>
 
+    <div
+      class="cd-top js-cd-top text-replace opacity-0 invisible fixed bottom-8 right-8 z-50"
+    >
+      <div
+        class="hover:opacity-80 flex h-10 w-10 cursor-pointer items-center justify-center rounded-sm bg-[#006BFF] text-white shadow-md transition duration-300 hover:bg-opacity-80"
+      >
+        <span
+          class="mt-[6px] h-3 w-3 rotate-45 border-l border-t border-white"
+        ></span>
+      </div>
+    </div>
+
+    <!-- back to top js -->
+    <script src="./lib/back-to-top/assets/js/main.js"></script>
+    <script src="./lib/back-to-top/assets/js/util.js"></script>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <!-- wow.js -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
@@ -2205,6 +2223,10 @@
             dropdown.style.display = "flex";
           } else {
             dropdown.style.display = "none";
+          }
+
+          if (window.innerWidth >= 1280) {
+            dropdown.style.display = "flex";
           }
         }
       }
